@@ -1,0 +1,1602 @@
+[
+    {
+        "crime_no": 109484,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09718564487024646,
+            "unemployment_rate": 0.05986522346777598
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109414,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09344571983406512,
+            "unemployment_rate": 0.0685170793452128
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109441,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.052090205516901106,
+            "unemployment_rate": 0.033974862869814236
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109400,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11734183581416997,
+            "unemployment_rate": 0.04786734806219012
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109451,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11665049471045494,
+            "unemployment_rate": 0.0570778033863685
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109437,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.057665777290675437,
+            "unemployment_rate": 0.0428515312145566
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109448,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.16079310729346788,
+            "unemployment_rate": 0.06188818596996476
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109459,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1458079676869107,
+            "unemployment_rate": 0.05143043887396012
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109490,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1010905990181795,
+            "unemployment_rate": 0.03341446980190211
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109461,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12196527105441,
+            "unemployment_rate": 0.05402813277117378
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109419,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15119255776474044,
+            "unemployment_rate": 0.06667012336018824
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109489,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11634830155694413,
+            "unemployment_rate": 0.09092840988700336
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109400,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12260488875407119,
+            "unemployment_rate": 0.07809693381695218
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109428,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.0548959983516248,
+            "unemployment_rate": 0.03030347825818339
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109429,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.0851587944888497,
+            "unemployment_rate": 0.05942520694211395
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109458,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.06586975388510904,
+            "unemployment_rate": 0.022972575475490097
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109486,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1329568908882124,
+            "unemployment_rate": 0.08286565912207552
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109409,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09008887055630706,
+            "unemployment_rate": 0.05531079158979668
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109426,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08098223901049456,
+            "unemployment_rate": 0.06631047040114671
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109482,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09388080977039026,
+            "unemployment_rate": 0.025062976511127218
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109487,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.07818932378761484,
+            "unemployment_rate": 0.07353354066026152
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109404,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.07587100620141796,
+            "unemployment_rate": 0.051275993455775465
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109478,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11117171328464326,
+            "unemployment_rate": 0.054334525301415075
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109458,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13211875360818198,
+            "unemployment_rate": 0.04927421402565847
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109477,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.18975346106371638,
+            "unemployment_rate": 0.07973481366538346
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109465,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.054351326159278526,
+            "unemployment_rate": 0.037426081461751776
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109469,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.10279267754526769,
+            "unemployment_rate": 0.1040010223585977
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109464,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15993359169077426,
+            "unemployment_rate": 0.06487068937797076
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109471,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08248479288568075,
+            "unemployment_rate": 0.08989815059141648
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109436,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.03743448201073016,
+            "unemployment_rate": 0.07351461579914208
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109491,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1462268636776608,
+            "unemployment_rate": 0.08076730611318406
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109399,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12316533457990625,
+            "unemployment_rate": 0.09561874840381449
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109434,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.195247418806853,
+            "unemployment_rate": 0.09221588263660625
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109401,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.16335838928414675,
+            "unemployment_rate": 0.0733994777877141
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109430,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.0655852326720614,
+            "unemployment_rate": 0.04780670062295947
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109450,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08679272533249308,
+            "unemployment_rate": 0.04350091670930932
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109447,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13944134473184433,
+            "unemployment_rate": 0.0931712077668741
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109479,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15125043805366917,
+            "unemployment_rate": 0.045850964053493266
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109483,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08553584871114425,
+            "unemployment_rate": 0.06253366458112682
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109475,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15871895986409962,
+            "unemployment_rate": 0.0858830703977222
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109420,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08485775472244135,
+            "unemployment_rate": 0.056946755002075355
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109445,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08149998848780637,
+            "unemployment_rate": 0.061909742524190355
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109481,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1781640654882588,
+            "unemployment_rate": 0.09350204395861617
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109476,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12070150123517966,
+            "unemployment_rate": 0.059664863060287815
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109399,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.10885375556091709,
+            "unemployment_rate": 0.059429554193103355
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109405,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08988130389691933,
+            "unemployment_rate": 0.06985984084161358
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109424,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.05807639552130321,
+            "unemployment_rate": 0.05603781408934521
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109398,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11759150296891413,
+            "unemployment_rate": 0.0698487890024754
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109476,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09132983616397676,
+            "unemployment_rate": 0.08588006600836584
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109489,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11732871912351087,
+            "unemployment_rate": 0.035308929202809224
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109492,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13870679554457382,
+            "unemployment_rate": 0.058289218449486
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109395,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09584237446895155,
+            "unemployment_rate": 0.0836370747681628
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109407,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15810717216820264,
+            "unemployment_rate": 0.08617211266765962
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109446,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.07541153059527447,
+            "unemployment_rate": 0.06970432718634405
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109458,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.0834335241334688,
+            "unemployment_rate": 0.04372311196001135
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109473,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11474106245173299,
+            "unemployment_rate": 0.08758464545290365
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109458,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09686737521775783,
+            "unemployment_rate": 0.043534805650452105
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109456,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.09285030163922996,
+            "unemployment_rate": 0.07217178952406945
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109418,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.07954680966559262,
+            "unemployment_rate": 0.07879220299078958
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109493,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.10135586400838884,
+            "unemployment_rate": 0.08903035305229895
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109445,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.19003764818862146,
+            "unemployment_rate": 0.08042951020303404
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109438,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.10768218938556537,
+            "unemployment_rate": 0.06628182723226915
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109475,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1063538191658864,
+            "unemployment_rate": 0.07248533446887939
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109407,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1157201277403501,
+            "unemployment_rate": 0.04510946745908942
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109416,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11441994833764818,
+            "unemployment_rate": 0.052758471876312114
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109416,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12298327914739139,
+            "unemployment_rate": 0.07442529971781466
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109448,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.04516185385601922,
+            "unemployment_rate": 0.07285638519385157
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109418,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11172379779305676,
+            "unemployment_rate": 0.0975270456083759
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109422,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.05648106717407981,
+            "unemployment_rate": 0.04937218062990805
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109479,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1346816486463506,
+            "unemployment_rate": 0.06016638637302936
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109484,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.0357773727617787,
+            "unemployment_rate": 0.051446042648517654
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109450,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11798609657437238,
+            "unemployment_rate": 0.023508854315714416
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109453,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1673502377942815,
+            "unemployment_rate": 0.04720046121626301
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109466,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08511893367520003,
+            "unemployment_rate": 0.03559563848829946
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109423,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15853309271680682,
+            "unemployment_rate": 0.05723358549121237
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109400,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12392265365894688,
+            "unemployment_rate": 0.0854151721230269
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109417,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11657017654489987,
+            "unemployment_rate": 0.06962032518947843
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109438,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.14848972453978876,
+            "unemployment_rate": 0.03493895957447982
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109413,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1299661549064133,
+            "unemployment_rate": 0.07331800301989422
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109485,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.10970144092191828,
+            "unemployment_rate": 0.057101114712520905
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109412,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.050236967077093256,
+            "unemployment_rate": 0.06872861267068932
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109413,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.041498544327439574,
+            "unemployment_rate": 0.044572377296662406
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109423,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.1799901678436234,
+            "unemployment_rate": 0.09061315183654402
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109449,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13218189478653636,
+            "unemployment_rate": 0.040031922756700686
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109495,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08485333909999832,
+            "unemployment_rate": 0.07547885862181383
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109421,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.11046492458042959,
+            "unemployment_rate": 0.06638260088490434
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109409,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13493035480874205,
+            "unemployment_rate": 0.08986111204527622
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109472,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.06970574669411134,
+            "unemployment_rate": 0.06879085157227985
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109401,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.051457290332987196,
+            "unemployment_rate": 0.04527979365082825
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109489,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.12214569098715711,
+            "unemployment_rate": 0.06508071495543745
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109400,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.15978669752194635,
+            "unemployment_rate": 0.09139408991482377
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109444,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.17431001802170398,
+            "unemployment_rate": 0.07746213182310462
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109439,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.0816164793726251,
+            "unemployment_rate": 0.056140395009782705
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109416,
+        "crimetype": "burglary",
+        "crimestrategy": "breaking in",
+        "location": "suburb",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.058626199647266494,
+            "unemployment_rate": 0.05047073821361857
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.14,
+            "previous_month_crime_rate": 0.1
+        }
+    },
+    {
+        "crime_no": 109466,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13430575467298916,
+            "unemployment_rate": 0.04740015784075294
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109475,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.06560371566928266,
+            "unemployment_rate": 0.030437098751655692
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109461,
+        "crimetype": "assault",
+        "crimestrategy": "using knives",
+        "location": "city",
+        "time_of_day": "day",
+        "weather": "cloudy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.08132462074359462,
+            "unemployment_rate": 0.07486361837932998
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.22,
+            "previous_month_crime_rate": 0.18
+        }
+    },
+    {
+        "crime_no": 109488,
+        "crimetype": "robbery",
+        "crimestrategy": "armed",
+        "location": "suburb",
+        "time_of_day": "evening",
+        "weather": "rainy",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.143074504791364,
+            "unemployment_rate": 0.05648938486119463
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.18,
+            "previous_month_crime_rate": 0.12
+        }
+    },
+    {
+        "crime_no": 109453,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.13731596176916838,
+            "unemployment_rate": 0.08320946896168108
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    },
+    {
+        "crime_no": 109408,
+        "crimetype": "killing",
+        "crimestrategy": "using guns",
+        "location": "city",
+        "time_of_day": "night",
+        "weather": "clear",
+        "socioeconomic_factors": {
+            "poverty_rate": 0.16251180816464544,
+            "unemployment_rate": 0.10548404275196441
+        },
+        "historical_crime_data": {
+            "previous_year_crime_rate": 0.2,
+            "previous_month_crime_rate": 0.15
+        }
+    }
+]
