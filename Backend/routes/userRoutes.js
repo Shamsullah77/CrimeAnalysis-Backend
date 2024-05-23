@@ -15,7 +15,7 @@ const { getusers, createuser , deleteuser} = require('../controllers/userControl
 // router.post('/addusers', addUser);
 // router.delete('/delusers', addUser);
 
-
+// changes by sahil
 router.post('/createuser', createuser);
 router.get('/users', getusers);
 router.delete('/deleteuser/:id', deleteuser);

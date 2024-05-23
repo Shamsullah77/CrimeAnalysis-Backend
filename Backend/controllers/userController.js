@@ -49,7 +49,7 @@ exports.addUser = (req, res) => {
 };
 
 
-
+// by sahil
 exports.getusers = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -60,7 +60,7 @@ exports.getusers = async (req, res) => {
 };
 
 
-
+// by shail 
 exports.createuser = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -79,7 +79,7 @@ exports.createuser = async (req, res) => {
 
 
 
-
+// by sahil 
 exports.deleteuser = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
