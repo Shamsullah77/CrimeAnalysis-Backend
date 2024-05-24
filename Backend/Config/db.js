@@ -21,4 +21,6 @@ const sequelize = new Sequelize('caps', 'root', '', {
   dialect: 'mysql'
 });
 
+
+
 module.exports = sequelize;
