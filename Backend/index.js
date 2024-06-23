@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -10,7 +8,7 @@ const sequelize = require('./Config/db');
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+// hello from habibi
 // Routes
 app.use('/api', userRoutes);
 
