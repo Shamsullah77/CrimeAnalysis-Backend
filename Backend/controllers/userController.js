@@ -1,39 +1,58 @@
-const User = require('../models/users');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("../models/users");
 
-exports.getusers = async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.status(200).json(users);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+//here is authuntication policy applied
+exports.signup = async (req, res) => {
+  const { Name, Email, Password, ConfirmPassword } = req.body;
+  // Check if passwords match
+  if (Password !== ConfirmPassword) {
+    return res.json({ error: "Passwords do not match" });
   }
-};
-
-exports.createuser = async (req, res) => {
-  const { Name, Email, Password } = req.body;
   try {
-    const newUser = await User.create({
-      name: Name,
-      email: Email,
-      password: Password,
+    // Check if the email already exists in the database
+    const existingUser = await User.findOne({ where: { email: Email } });
+    if (existingUser) {
+      return res.json({ error: "Email address is already in use" });
+    }
+    // Create the new user
+    const newuser = await User.create({
+      Name: Name,
+      Email: Email,
+      Password: Password,
     });
-
-    res.status(201).json(newUser);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.json({ Status: "Success" });
+  } catch (error) {
+    console.error("Error creating user:", error);
+    res.status(400).json({ error: error.message });
   }
 };
 
-exports.deleteuser = async (req, res) => {
+exports.signin = async (req, res) => {
+  const { email, password } = req.body;
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findOne({ where: { Email: email } });
+
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.json({ error: "Invalid email or password" });
     }
 
-    await user.destroy();
-    res.status(200).json({ message: 'User deleted successfully' });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+    const isMatch = await bcrypt.compare(password, user.Password);
+    if (!isMatch) {
+      return res.json({ error: "Password Does Not Match" });
+    }
+    // Generate JWT token
+    const uid = user.id;
+    const token = jwt.sign({ uid }, "jwt-secret-key", { expiresIn: "1h" });
+    res.json({ Status: "Success", token, uid });
+  } catch (error) {
+    console.error("Error signing in:", error);
+    res.status(500).json({ error: "Server error" });
   }
+};
+exports.home = (req, res) => {
+  res.json({ Status: "Success" });
+};
+exports.about = (req, res) => {
+  res.json({ Status: "Success" });
 };

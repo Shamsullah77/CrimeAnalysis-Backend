@@ -1,42 +1,44 @@
-// const { Sequelize, DataTypes } = require('sequelize');
-// const sequelize = require('../Config/db');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../Config/db");
+const bcrypt = require("bcryptjs");
 
-// const User = sequelize.define('users', {
-//     name: {
-//         type: DataTypes.STRING,
-//         allowNull: false
-//     },
-//     email: {
-//         type: DataTypes.STRING,
-//         allowNull: false,
-//         unique: true
-//     },
-//     password: {
-//         type: DataTypes.STRING,
-//         allowNull: false
-//     }
-// }, {timestamps: false
-    
-// });
-// console.log('database is connected');
-// module.exports = User
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../Config/db');
-
-const User = sequelize.define('users', {
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
+const User = sequelize.define(
+  "User",
+  {
+    Name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: "Email address is already in use",
+      },
+      validate: {
+        isEmail: true,
+      },
+    },
+    Password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    role: {
+      type: DataTypes.STRING,
+      enum: ["user", "admin"],
+      defaultValue: "user",
+    },
   },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
+  {
+    hooks: {
+      beforeCreate: async (user) => {
+        if (user.Password) {
+          const salt = await bcrypt.genSalt(10);
+          user.Password = await bcrypt.hash(user.Password, salt);
+        }
+      },
+    },
   }
-}, { timestamps: false });
+);
 
 module.exports = User;
