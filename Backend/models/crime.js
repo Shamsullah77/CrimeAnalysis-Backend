@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../Config/db");
 const bcrypt = require("bcryptjs");
 
-const Crime = sequelize.define("Crime", {
+const Crime = sequelize.define("Crimeeee", {
   crimetype: {
     type: DataTypes.STRING,
     allowNull: false,
