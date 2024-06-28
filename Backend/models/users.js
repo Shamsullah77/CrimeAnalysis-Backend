@@ -28,6 +28,10 @@ const User = sequelize.define(
       enum: ["user", "admin"],
       defaultValue: "user",
     },
+    image: {
+      type: DataTypes.BLOB,
+      defaultValue: "null",
+    },
   },
   {
     hooks: {
