@@ -26,7 +26,7 @@ sequelize
 
 // Sync database
 sequelize
-  .sync()
+  .sync({ force: true })
   .then(() => console.log("Database Connected..."))
   .catch((err) => console.log("Error: " + err));
 
