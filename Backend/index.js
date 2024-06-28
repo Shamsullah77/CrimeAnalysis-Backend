@@ -1,4 +1,4 @@
-const express =require('express');
+const express = require("express");
 const cors = require("cors");
 const app = express();
 const sequelize = require("./Config/db");
@@ -9,7 +9,6 @@ const Victim = require("./models/victim");
 const CrimeType = require("./models/crimeType");
 const Crimes = require("./models/crimes");
 
-const Crime = require("./models/crime");
 const userroutes = require("./routes/userRoutes");
 const { FORCE } = require("sequelize/lib/index-hints");
 // Middleware

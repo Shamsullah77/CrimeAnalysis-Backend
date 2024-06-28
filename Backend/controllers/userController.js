@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users");
+const Criminal = require("../models/Criminal");
 
 //here is authuntication policy applied
 exports.signup = async (req, res) => {
@@ -50,9 +51,28 @@ exports.signin = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-exports.home = (req, res) => {
-  res.json({ Status: "Success" });
+exports.home = async (req, res) => {
+  try {
+    const criminals = await Criminal.findAll({
+      attributes: ["Name", "Experience", "Image"], // Limit the number of results to 3
+    });
+    // Map over criminals to convert image buffer to base64
+    const criminalsWithBase64 = criminals.map((criminal) => ({
+      name: criminal.Name,
+      experience: criminal.Experience,
+      image: criminal.Image
+        ? `data:image/jpeg;base64,${criminal.Image.toString("base64")}` // Use correct property name
+        : null,
+    }));
+
+    console.log(criminalsWithBase64);
+    res.json({ Status: "Success", criminalsWithBase64 });
+  } catch (error) {
+    console.error("Error fetching criminals:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
+
 exports.about = (req, res) => {
   res.json({ Status: "Success" });
 };

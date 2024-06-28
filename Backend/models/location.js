@@ -44,15 +44,6 @@ const Location = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    criminalid: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: Criminal,
-        key: "id",
-      },
-    },
     crimeid: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -68,8 +59,6 @@ const Location = sequelize.define(
 );
 
 // defining the realation between tables
-Location.belongsTo(Criminal, { foreignKey: "criminalid" });
-Criminal.hasMany(Location, { foreignKey: "criminalid" });
 
 Location.belongsTo(Crime, { foreignKey: "crimeid" });
 Crime.hasMany(Location, { foreignKey: "crimeid" });

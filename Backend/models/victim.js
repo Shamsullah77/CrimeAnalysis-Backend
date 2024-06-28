@@ -2,7 +2,7 @@
 
 const { DataTypes } = require("sequelize");
 const sequelize = require("../Config/db"); // Assuming you have a database connection setup
-
+const Criminal = require("../models/Criminal");
 const Victim = sequelize.define(
   "Victim",
   {
@@ -31,10 +31,15 @@ const Victim = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    criminal: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     tableName: "Victim",
   }
 );
-
+Victim.belongsTo(Criminal, { foreignKey: "criminal" });
+Criminal.hasMany(Victim, { foreignKey: "criminal" });
 module.exports = Victim;

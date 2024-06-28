@@ -19,6 +19,10 @@ const Criminal = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    Province: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     Dob: {
       type: DataTypes.DATE,
       allowNull: false,
