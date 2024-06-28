@@ -52,7 +52,7 @@ const Criminal = sequelize.define(
       allowNull: false,
     },
     Image: {
-      type: DataTypes.BLOB,
+      type: DataTypes.BLOB("long"),
       allowNull: true,
     },
   },
