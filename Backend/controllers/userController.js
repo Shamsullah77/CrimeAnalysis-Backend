@@ -65,7 +65,7 @@ exports.home = async (req, res) => {
         : null,
     }));
 
-    console.log(criminalsWithBase64);
+    // console.log(criminalsWithBase64);
     res.json({ Status: "Success", criminalsWithBase64 });
   } catch (error) {
     console.error("Error fetching criminals:", error);
