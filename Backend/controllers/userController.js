@@ -76,6 +76,7 @@ exports.home = async (req, res) => {
 exports.about = (req, res) => {
   res.json({ Status: "Success" });
 };
+
 exports.getuserdashboard = async (req, res) => {
   try {
     const users = await User.findAll({

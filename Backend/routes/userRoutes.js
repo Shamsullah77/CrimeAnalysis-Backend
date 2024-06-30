@@ -25,7 +25,7 @@ router.post("/crimedata", crimecontroller.getcrimedata);
 // victim routes
 router.get("/getvictim", victimcontroller.getvictim);
 router.post("/victimdata", victimcontroller.getvictimdata);
+router.get("/getvictimdashboard", victimcontroller.getvictimdashboard);
 // dashboard routes .................
-
 router.get("/maindashboard", dashcontroller.dashboard);
 module.exports = router;
