@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/users");
 const Criminal = require("../models/Criminal");
 const Userfeedback = require("../models/userfeedback");
+const Feedback = require("../models/userfeedback");
 
 //here is authuntication policy applied
 exports.signup = async (req, res) => {
@@ -57,7 +58,7 @@ exports.home = async (req, res) => {
     const criminals = await Criminal.findAll({
       attributes: ["Name", "Experience", "Image"], // Limit the number of results to 3
     });
-    // Map over criminals to convert image buffer to base64
+    // criminals over home page
     const criminalsWithBase64 = criminals.map((criminal) => ({
       name: criminal.Name,
       experience: criminal.Experience,
@@ -65,9 +66,31 @@ exports.home = async (req, res) => {
         ? `data:image/jpeg;base64,${criminal.Image.toString("base64")}` // Use correct property name
         : null,
     }));
+    // users feedback over home page
+    const feedback = await Feedback.findAll({
+      attributes: ["feedback"],
+      include: [
+        {
+          model: User,
+          attributes: ["Name", "image"],
+        },
+      ],
+    });
+    // Map over criminals to convert image buffer to base64
+    const feedbackWithUserDetails = feedback.map((item) => ({
+      feedback: item.feedback,
+      username: item.User.Name,
+      userimage: item.User.image
+        ? `data:image/jpeg;base64,${item.User.image.toString("base64")}` // Use correct property name
+        : null,
+    }));
 
     // console.log(criminalsWithBase64);
-    res.json({ Status: "Success", criminalsWithBase64 });
+    res.json({
+      Status: "Success",
+      criminalsWithBase64,
+      userfeedbacks: feedbackWithUserDetails,
+    });
   } catch (error) {
     console.error("Error fetching criminals:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -133,4 +156,32 @@ exports.userfeedback = async (req, res) => {
     feedback: feedback,
   });
   res.json({ Status: "Success" });
+};
+exports.getuserfeedback = async (req, res) => {
+  try {
+    const feedback = await Feedback.findAll({
+      attributes: ["feedbackId", "userId", "feedback"],
+      include: [
+        {
+          model: User,
+          attributes: ["Name", "image"],
+        },
+      ],
+    });
+    // Map over criminals to convert image buffer to base64
+    const feedbackWithUserDetails = feedback.map((item) => ({
+      id: item.feedbackId,
+      feedback: item.feedback,
+      username: item.User.Name,
+      userimage: item.User.image
+        ? `data:image/jpeg;base64,${item.User.image.toString("base64")}` // Use correct property name
+        : null,
+    }));
+
+    // console.log(criminalsWithBase64);
+    res.json({ Status: "Success", feedback: feedbackWithUserDetails });
+  } catch (error) {
+    console.error("Error fetching criminals:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
