@@ -15,6 +15,7 @@ router.get("/getuserdashboard", authcontroller.getuserdashboard);
 router.post("/deleteuser", authcontroller.deleteuserdashboard);
 router.post("/userfeedback", authcontroller.userfeedback);
 router.get("/getfeedbackdashboard", authcontroller.getuserfeedback);
+ router.post("/deleteuserfeedback", authcontroller.deleteuserfeedback);
 router.get("/", authcontroller.home);
 router.get("/About", authcontroller.about);
 router.get("/crimeanalysis", analysiscontroller.analysiseddata);

@@ -68,11 +68,12 @@ exports.home = async (req, res) => {
     }));
     // users feedback over home page
     const feedback = await Feedback.findAll({
-      attributes: ["feedback"],
+      attributes: ["feedbackId", "userId", "feedback"],
       include: [
         {
           model: User,
           attributes: ["Name", "image"],
+          required: true, // Ensures that only feedback with associated user is returned
         },
       ],
     });
@@ -85,7 +86,6 @@ exports.home = async (req, res) => {
         : null,
     }));
 
-    // console.log(criminalsWithBase64);
     res.json({
       Status: "Success",
       criminalsWithBase64,
@@ -165,12 +165,13 @@ exports.getuserfeedback = async (req, res) => {
         {
           model: User,
           attributes: ["Name", "image"],
+          required: true, // Ensures that only feedback with associated user is returned
         },
       ],
     });
     // Map over criminals to convert image buffer to base64
     const feedbackWithUserDetails = feedback.map((item) => ({
-      id: item.feedbackId,
+      feedbackId: item.feedbackId,
       feedback: item.feedback,
       username: item.User.Name,
       userimage: item.User.image
@@ -183,5 +184,44 @@ exports.getuserfeedback = async (req, res) => {
   } catch (error) {
     console.error("Error fetching criminals:", error);
     res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+exports.deleteuserfeedback = async (req, res) => {
+  const { feedbackId } = req.body;
+
+  console.log(feedbackId);
+  try {
+    // Find the user by userId
+    const existingfeedback = await Feedback.findOne({
+      where: { feedbackId: feedbackId },
+    });
+    // Delete the user
+    await existingfeedback.destroy();
+    const feedback = await Feedback.findAll({
+      attributes: ["feedbackId", "userId", "feedback"],
+      include: [
+        {
+          model: User,
+          attributes: ["Name", "image"],
+          required: true, // Ensures that only feedback with associated user is returned
+        },
+      ],
+    });
+    // Map over criminals to convert image buffer to base64
+    const feedbackWithUserDetails = feedback.map((item) => ({
+      feedbackId: item.feedbackId,
+      feedback: item.feedback,
+      username: item.User.Name,
+      userimage: item.User.image
+        ? `data:image/jpeg;base64,${item.User.image.toString("base64")}` // Use correct property name
+        : null,
+    }));
+
+    // console.log(criminalsWithBase64);
+    res.json({ Status: "Success", feedback: feedbackWithUserDetails });
+  } catch (error) {
+    console.error("Error creating user:", error);
+    res.status(400).json({ error: error.message });
   }
 };
