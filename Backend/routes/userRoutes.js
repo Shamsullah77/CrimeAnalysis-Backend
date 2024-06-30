@@ -20,8 +20,10 @@ router.post("/formdata", analysiscontroller.analysisformdata);
 // criminals routes
 router.post("/criminaldata", criminalcontroller.getcriminaldata);
 router.get("/getcriminalinfo", criminalcontroller.getcriminalinfo);
+router.get("/getcriminaldashboard", criminalcontroller.getcriminaldashboard);
 // crime routes
 router.post("/crimedata", crimecontroller.getcrimedata);
+router.get("/getcrimedashboard", crimecontroller.getcrimedashboard);
 // victim routes
 router.get("/getvictim", victimcontroller.getvictim);
 router.post("/victimdata", victimcontroller.getvictimdata);

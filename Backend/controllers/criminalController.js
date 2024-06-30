@@ -94,3 +94,28 @@ exports.getcriminalinfo = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+exports.getcriminaldashboard = async (req, res) => {
+  try {
+    const criminal = await Criminal.findAll({
+      attributes: ["id", "Name", "Fname", "Province", "Phone", "Image"], // Limit the number of results to 3
+    });
+    // Map over criminals to convert image buffer to base64
+    const criminalWithBase64 = criminal.map((criminal) => ({
+      id: criminal.id,
+      name: criminal.Name,
+      fname: criminal.Fname,
+      province: criminal.Province,
+      phone: criminal.Phone,
+      image: criminal.Image
+        ? `data:image/jpeg;base64,${criminal.Image.toString("base64")}` // Use correct property name
+        : null,
+    }));
+
+    // console.log(criminalsWithBase64);
+    res.json({ Status: "Success", criminals: criminalWithBase64 });
+  } catch (error) {
+    console.error("Error fetching criminals:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};

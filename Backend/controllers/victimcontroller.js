@@ -64,7 +64,7 @@ exports.getvictimdashboard = async (req, res) => {
       Criminal: victim.criminal,
     }));
 
-    console.log(usersWithBase64);
+    // console.log(usersWithBase64);
     res.json({ Status: "Success", victim: usersWithBase64 });
   } catch (error) {
     console.error("Error fetching criminals:", error);
