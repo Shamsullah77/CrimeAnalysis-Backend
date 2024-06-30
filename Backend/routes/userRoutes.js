@@ -8,8 +8,10 @@ const dashcontroller = require("../controllers/dashboardcontroller");
 const criminalcontroller = require("../controllers/criminalController");
 const crimecontroller = require("../controllers/crimeController");
 const victimcontroller = require("../controllers/victimcontroller");
+//user routes
 router.post("/signup", authcontroller.signup);
 router.post("/signin", authcontroller.signin);
+router.get("/getuserdashboard", authcontroller.getuserdashboard);
 router.get("/", authcontroller.home);
 router.get("/About", authcontroller.about);
 router.get("/crimeanalysis", analysiscontroller.analysiseddata);

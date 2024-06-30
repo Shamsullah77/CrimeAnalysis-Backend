@@ -76,3 +76,27 @@ exports.home = async (req, res) => {
 exports.about = (req, res) => {
   res.json({ Status: "Success" });
 };
+exports.getuserdashboard = async (req, res) => {
+  try {
+    const users = await User.findAll({
+      attributes: ["id", "Name", "Email", "Password", "role", "image"], // Limit the number of results to 3
+    });
+    // Map over criminals to convert image buffer to base64
+    const usersWithBase64 = users.map((user) => ({
+      id: user.id,
+      name: user.Name,
+      email: user.Email,
+      password: user.Password,
+      role: user.role,
+      Image: user.image
+        ? `data:image/jpeg;base64,${user.image.toString("base64")}` // Use correct property name
+        : null,
+    }));
+
+    // console.log(criminalsWithBase64);
+    res.json({ Status: "Success", users: usersWithBase64 });
+  } catch (error) {
+    console.error("Error fetching criminals:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
