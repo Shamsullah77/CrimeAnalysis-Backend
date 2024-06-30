@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users");
 const Criminal = require("../models/Criminal");
+const Userfeedback = require("../models/userfeedback");
 
 //here is authuntication policy applied
 exports.signup = async (req, res) => {
@@ -100,4 +101,36 @@ exports.getuserdashboard = async (req, res) => {
     console.error("Error fetching criminals:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+};
+
+exports.deleteuserdashboard = async (req, res) => {
+  const { userId } = req.body;
+
+  console.log(userId);
+  try {
+    // Find the user by userId
+    const existingUser = await User.findOne({ where: { id: userId } });
+    console.log(existingUser);
+    // If the user doesn't exist, send a 404 response
+    if (!existingUser) {
+      return res.status(404).send({ message: "User not found" });
+    }
+
+    // Delete the user
+    await existingUser.destroy();
+
+    res.json({ Status: "Success" });
+  } catch (error) {
+    console.error("Error creating user:", error);
+    res.status(400).json({ error: error.message });
+  }
+};
+exports.userfeedback = async (req, res) => {
+  const { feedback, id } = req.body;
+  console.log(feedback, id);
+  const newfeedback = await Userfeedback.create({
+    userId: id,
+    feedback: feedback,
+  });
+  res.json({ Status: "Success" });
 };

@@ -8,6 +8,7 @@ const Criminal = require("./models/Criminal");
 const Victim = require("./models/victim");
 const CrimeType = require("./models/crimeType");
 const Crimes = require("./models/crimes");
+const userfeedback = require("./models/userfeedback");
 
 const userroutes = require("./routes/userRoutes");
 const { FORCE } = require("sequelize/lib/index-hints");
