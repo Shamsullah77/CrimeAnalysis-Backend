@@ -290,28 +290,28 @@ exports.getcriminalupdatesubmit = async (req, res) => {
   );
 
   try {
-    // const criminal = await Criminal.findOne({ where: { id } });
+    const criminal = await Criminal.findOne({ where: { id } });
 
-    // if (!criminal) {
-    //   return res.status(404).json({ error: "criminal not found" });
-    // }
+    if (!criminal) {
+      return res.status(404).json({ error: "criminal not found" });
+    }
 
-    // await Victim.update(
-    //   {
-    //     name,
-    //     fname,
-    //     experience,
-    //     province,
-    //     dob,
-    //     economical_situation,
-    //     education_level,
-    //     phone,
-    //     ssn,
-    //     gender,
-    //     image,
-    //   },
-    //   { where: { id } }
-    // );
+    await Victim.update(
+      {
+        name,
+        fname,
+        experience,
+        province,
+        dob,
+        economical_situation,
+        education_level,
+        phone,
+        ssn,
+        gender,
+        image,
+      },
+      { where: { id } }
+    );
 
     res.json({ status: "Success" });
   } catch (error) {

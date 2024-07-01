@@ -102,3 +102,26 @@ exports.getcrimedashboard = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+//getcrimeseemore
+exports.getcrimeseemore = async (req, res) => {
+  const { id } = req.query;
+  console.log(id);
+  try {
+    const crime = await Crime.findOne({
+      where: { id: id },
+      attributes: ["id", "Casees", "Crimedate", "Strategy"], // Limit the number of results to 3
+    });
+    // Map over criminals to convert image buffer to base64
+    const crimesWithBase64 = {
+      id: crime.id,
+      cases: crime.Casees,
+      crimedate: crime.Crimedate,
+      startegy: crime.Strategy,
+    };
+
+    res.json({ Status: "Success", crimes: crimesWithBase64 });
+  } catch (error) {
+    console.error("Error fetching crime:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};

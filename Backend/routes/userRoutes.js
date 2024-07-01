@@ -44,6 +44,7 @@ router.get(
 // crime routes
 router.post("/crimedata", crimecontroller.getcrimedata);
 router.get("/getcrimedashboard", crimecontroller.getcrimedashboard);
+router.get("/getcrimeseemore", crimecontroller.getcrimeseemore);
 // victim routes
 router.get("/getvictim", victimcontroller.getvictim);
 router.post("/victimdata", victimcontroller.getvictimdata);
