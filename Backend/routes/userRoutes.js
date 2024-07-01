@@ -17,6 +17,8 @@ router.post("/userfeedback", authcontroller.userfeedback);
 router.get("/getfeedbackdashboard", authcontroller.getuserfeedback);
 router.post("/deleteuserfeedback", authcontroller.deleteuserfeedback);
 router.get("/getuserseemore", authcontroller.getuserseemore);
+router.get("/getuserupdate", authcontroller.getuserupdate);
+router.post("/getuserupdatesubmit", authcontroller.getuserupdatesubmit);
 router.get("/", authcontroller.home);
 router.get("/About", authcontroller.about);
 router.get(

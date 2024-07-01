@@ -150,6 +150,7 @@ exports.getvictimseemore = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 //getvictimupdates
 exports.getvictimupdate = async (req, res) => {
   const { id } = req.query;

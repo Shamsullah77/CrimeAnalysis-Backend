@@ -46,8 +46,10 @@ exports.signin = async (req, res) => {
     }
     // Generate JWT token
     const uid = user.id;
+    const urole = user.role;
+
     const token = jwt.sign({ uid }, "jwt-secret-key", { expiresIn: "1h" });
-    res.json({ Status: "Success", token, uid });
+    res.json({ Status: "Success", token, uid, urole });
   } catch (error) {
     console.error("Error signing in:", error);
     res.status(500).json({ error: "Server error" });
@@ -254,6 +256,62 @@ exports.getuserseemore = async (req, res) => {
     res.json({ status: "Success", user: userWithBase64 });
   } catch (error) {
     console.error("Error fetching victim:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+//getvictimupdates
+exports.getuserupdate = async (req, res) => {
+  const { Id } = req.query;
+  console.log("user id is " + Id);
+  try {
+    const user = await User.findOne({
+      where: { id: Id },
+      attributes: ["Name", "Email", "role", "image"],
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: "user not found" });
+    }
+
+    // Convert image buffer to base64 if it exists
+    const userWithBase64 = {
+      id: user.id,
+      name: user.Name,
+      image: user.image
+        ? `data:image/jpeg;base64,${user.image.toString("base64")}`
+        : null,
+      email: user.Email,
+      role: user.role,
+    };
+    // console.log(userWithBase64);
+    res.json({ Status: "Success", user: userWithBase64 });
+  } catch (error) {
+    console.error("Error fetching victim:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+//getvictimupdatesubmit
+exports.getuserupdatesubmit = async (req, res) => {
+  console.log("i am here");
+  const { Name, Image, Email, Role } = req.body;
+  console.log(Name, Email, Role);
+  try {
+    const user = await User.findOne({ where: { Email: Email } });
+
+    if (!user) {
+      return res.status(404).json({ error: "user not found" });
+    }
+
+    await User.update(
+      { Name, Image, Role, Email },
+      { where: { Email: Email } }
+    );
+
+    res.json({ status: "Success" });
+  } catch (error) {
+    console.error("Error updating user:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
