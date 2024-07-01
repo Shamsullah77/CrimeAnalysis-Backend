@@ -12,7 +12,16 @@ const userfeedback = require("./models/userfeedback");
 
 const userroutes = require("./routes/userRoutes");
 const { FORCE } = require("sequelize/lib/index-hints");
-// Middleware
+const bodyParser = require('body-parser');
+const { PythonShell } = require('python-shell');
+
+const  predictRoute = require('./routes/predictionRoute');
+
+// Other middleware and routes
+
+app.use('/predict', predictRoute);
+
+
 app.use(cors());
 app.use(express.json());
 require("dotenv").config();
@@ -31,6 +40,12 @@ sequelize
   .then(() => console.log("Database Connected..."))
   .catch((err) => console.log("Error: " + err));
 
+
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+
