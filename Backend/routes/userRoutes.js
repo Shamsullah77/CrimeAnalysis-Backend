@@ -8,6 +8,7 @@ const dashcontroller = require("../controllers/dashboardcontroller");
 const criminalcontroller = require("../controllers/criminalController");
 const crimecontroller = require("../controllers/crimeController");
 const victimcontroller = require("../controllers/victimcontroller");
+const dataController = require('../controllers/dataController');
 //user routes
 router.post("/signup", authcontroller.signup);
 router.post("/signin", authcontroller.signin);
@@ -52,6 +53,7 @@ router.post("/deletevictim", victimcontroller.deletevictim);
 router.get("/getvictimupdate", victimcontroller.getvictimupdate);
 router.get("/getvictimseemore", victimcontroller.getvictimseemore);
 router.post("/getvictimupdatesubmit", victimcontroller.getvictimupdatesubmit);
+router.post('/load-data', dataController.loadData);
 // dashboard routes .................
 router.get(
   "/maindashboard",
@@ -60,3 +62,12 @@ router.get(
   dashcontroller.dashboard
 );
 module.exports = router;
+
+
+// Backend/routes/dataRoutes.js
+
+
+
+
+
+

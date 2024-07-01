@@ -1,0 +1,32 @@
+<service>
+	<id>crimedataloader.exe</id>
+	<name>CrimeDataLoader</name>
+	<description>Service to load crime data to CSV</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<argument>--harmony</argument>
+	<argument>--max_old_space_size=4096</argument>
+	<argument>C:\Users\Shamsullah\Desktop\complete project\CrimeAnalysis-Backend\Backend\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\Users\Shamsullah\Desktop\complete project\CrimeAnalysis-Backend\Backend\util\windowService.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>CrimeDataLoader wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<serviceaccount>
+		<domain>SHAMSULLAHKAMAL</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>C:\Users\Shamsullah\Desktop\complete project\CrimeAnalysis-Backend\Backend</workingdirectory>
+</service>
