@@ -16,6 +16,7 @@ router.post("/deleteuser", authcontroller.deleteuserdashboard);
 router.post("/userfeedback", authcontroller.userfeedback);
 router.get("/getfeedbackdashboard", authcontroller.getuserfeedback);
 router.post("/deleteuserfeedback", authcontroller.deleteuserfeedback);
+router.get("/getuserseemore", authcontroller.getuserseemore);
 router.get("/", authcontroller.home);
 router.get("/About", authcontroller.about);
 router.get("/crimeanalysis", analysiscontroller.analysiseddata);
@@ -26,6 +27,8 @@ router.post("/criminaldata", criminalcontroller.getcriminaldata);
 router.get("/getcriminalinfo", criminalcontroller.getcriminalinfo);
 router.get("/getcriminaldashboard", criminalcontroller.getcriminaldashboard);
 router.post("/deletecriminal", criminalcontroller.deletecriminal);
+router.get("/getcriminalseemore", criminalcontroller.getcriminalseemore);
+router.get("/getvictimupdate", victimcontroller.getvictimupdate);
 // crime routes
 router.post("/crimedata", crimecontroller.getcrimedata);
 router.get("/getcrimedashboard", crimecontroller.getcrimedashboard);
@@ -33,6 +36,9 @@ router.get("/getcrimedashboard", crimecontroller.getcrimedashboard);
 router.get("/getvictim", victimcontroller.getvictim);
 router.post("/victimdata", victimcontroller.getvictimdata);
 router.get("/getvictimdashboard", victimcontroller.getvictimdashboard);
+router.post("/deletevictim", victimcontroller.deletevictim);
+router.get("/getvictimseemore", victimcontroller.getvictimseemore);
+router.post("/getvictimupdatesubmit", victimcontroller.getvictimupdatesubmit);
 // dashboard routes .................
 router.get("/maindashboard", dashcontroller.dashboard);
 module.exports = router;

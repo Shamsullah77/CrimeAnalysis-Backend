@@ -225,3 +225,35 @@ exports.deleteuserfeedback = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+//getuserseemore
+exports.getuserseemore = async (req, res) => {
+  const { id } = req.query;
+  console.log(id);
+  try {
+    const user = await User.findOne({
+      where: { id: id },
+      attributes: ["id", "Name", "Email", "Password", "role", "image"],
+    });
+    console.log(user);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Convert image buffer to base64 if it exists
+    const userWithBase64 = {
+      id: user.id,
+      name: user.Name,
+      email: user.Email,
+      password: user.Password,
+      role: user.role,
+      image: user.image
+        ? `data:image/jpeg;base64,${user.image.toString("base64")}`
+        : null,
+    };
+
+    res.json({ status: "Success", user: userWithBase64 });
+  } catch (error) {
+    console.error("Error fetching victim:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
