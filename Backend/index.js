@@ -3,24 +3,22 @@ const cors = require("cors");
 const app = express();
 const sequelize = require("./Config/db");
 const User = require("./models/users");
-const location = require("./models/location");
 const Criminal = require("./models/Criminal");
+const location = require("./models/location");
 const Victim = require("./models/victim");
 const CrimeType = require("./models/crimeType");
 const Crimes = require("./models/crimes");
 const userfeedback = require("./models/userfeedback");
 
 const userroutes = require("./routes/userRoutes");
-const { FORCE } = require("sequelize/lib/index-hints");
-const bodyParser = require('body-parser');
-const { PythonShell } = require('python-shell');
+const bodyParser = require("body-parser");
+const { PythonShell } = require("python-shell");
 
-const  predictRoute = require('./routes/predictionRoute');
+const predictRoute = require("./routes/predictionRoute");
 
 // Other middleware and routes
 
-app.use('/predict', predictRoute);
-
+app.use("/predict", predictRoute);
 
 app.use(cors());
 app.use(express.json());
@@ -40,12 +38,6 @@ sequelize
   .then(() => console.log("Database Connected..."))
   .catch((err) => console.log("Error: " + err));
 
-
-
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
-

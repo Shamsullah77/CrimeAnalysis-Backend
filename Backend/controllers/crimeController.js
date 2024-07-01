@@ -2,6 +2,7 @@ const Crime = require("../models/crimes");
 const CrimeType = require("../models/crimeType");
 const location = require("../models/location");
 const upload = require("../middleware/upload");
+const { Sequelize } = require("sequelize"); // Import Sequelize
 
 exports.getcrimedata = (req, res) => {
   upload(req, res, async (err) => {
@@ -122,6 +123,42 @@ exports.getcrimeseemore = async (req, res) => {
     res.json({ Status: "Success", crimes: crimesWithBase64 });
   } catch (error) {
     console.error("Error fetching crime:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+//map
+
+exports.getLocationCrimes = async (req, res) => {
+  try {
+    const crimesByLocation = await location.findAll({
+      attributes: [
+        "id",
+        "District",
+        "Latitude",
+        "Longitude",
+        [Sequelize.fn("COUNT", Sequelize.col("crimeId")), "totalCrimes"],
+      ],
+      include: [
+        {
+          model: Crime,
+          attributes: [],
+        },
+      ],
+      group: ["Location.id"],
+    });
+
+    const result = crimesByLocation.map((location) => ({
+      locationId: location.id,
+      district: location.District,
+      latitude: location.Latitude,
+      longitude: location.Longitude,
+      totalCrimes: location.dataValues.totalCrimes,
+    }));
+    console.log(result);
+    res.json({ status: "Success", data: result });
+  } catch (error) {
+    console.error("Error fetching location crimes:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };

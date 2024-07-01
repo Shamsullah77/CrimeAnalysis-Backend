@@ -8,6 +8,7 @@ const dashcontroller = require("../controllers/dashboardcontroller");
 const criminalcontroller = require("../controllers/criminalController");
 const crimecontroller = require("../controllers/crimeController");
 const victimcontroller = require("../controllers/victimcontroller");
+const locationController = require("../controllers/crimeController");
 //user routes
 router.post("/signup", authcontroller.signup);
 router.post("/signin", authcontroller.signin);
@@ -60,4 +61,6 @@ router.get(
   is_auth.AuthRole("admin"),
   dashcontroller.dashboard
 );
+// maps routes
+router.get("/api/location/crimes", locationController.getLocationCrimes);
 module.exports = router;
