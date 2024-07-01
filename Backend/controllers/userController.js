@@ -49,6 +49,7 @@ exports.signin = async (req, res) => {
     const urole = user.role;
 
     const token = jwt.sign({ uid }, "jwt-secret-key", { expiresIn: "1h" });
+
     res.json({ Status: "Success", token, uid, urole });
   } catch (error) {
     console.error("Error signing in:", error);
@@ -315,3 +316,6 @@ exports.getuserupdatesubmit = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+
