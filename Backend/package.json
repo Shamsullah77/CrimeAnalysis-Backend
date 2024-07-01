@@ -12,6 +12,7 @@
   "dependencies": {
     "@tensorflow/tfjs": "^4.19.0",
     "body-parser": "^1.20.2",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
@@ -20,6 +21,7 @@
     "mysql2": "^3.10.1",
     "natural": "^7.0.6",
     "nodemon": "^3.1.4",
+    "python-shell": "^5.0.0",
     "sequelize": "^6.37.3"
   },
   "description": ""
