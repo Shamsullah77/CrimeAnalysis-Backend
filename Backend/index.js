@@ -11,10 +11,8 @@ const Victim = require("./models/victim");
 const CrimeType = require("./models/crimeType");
 const Crimes = require("./models/crimes");
 const userfeedback = require("./models/userfeedback");
-// const Crimefromothersource = require("./models/crimefromothersource");
 const predictRoute = require("./routes/predictionRoute");
 const userroutes = require("./routes/userRoutes");
-
 
 const PORT = process.env.PORT || 3002;
 
@@ -27,15 +25,15 @@ app.use("/predict", predictRoute);
 
 // Test database connection
 sequelize
-.authenticate()
-.then(() => console.log("Database connected..."))
-.catch((err) => console.log("Error: " + err));
+  .authenticate()
+  .then(() => console.log("Database connected..."))
+  .catch((err) => console.log("Error: " + err));
 
 // Sync database
 sequelize
-.sync()
-.then(() => console.log("Database Connected..."))
-.catch((err) => console.log("Error: " + err));
+  .sync()
+  .then(() => console.log("Database Connected..."))
+  .catch((err) => console.log("Error: " + err));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

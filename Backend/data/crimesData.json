@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "Criminal_name": "case a",
+    "Crime_type": "kill",
+    "Crime_date": "2024-07-24T00:00:00.000Z",
+    "Hour_of_day": "22:43:00",
+    "Location": "kandahar",
+    "Victim_gender": "male",
+    "Perpetrator_gender": "male",
+    "Perpetrator_age": 3,
+    "Weapon": "gun",
+    "Injury": "ahmad",
+    "Weather": "sunny",
+    "Temperature": 40,
+    "Previous_activity": "walking",
+    "Economical_situation": "low",
+    "Education_level": "12 classes"
+  }
+]

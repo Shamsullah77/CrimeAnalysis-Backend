@@ -9,7 +9,7 @@ const criminalcontroller = require("../controllers/criminalController");
 const crimecontroller = require("../controllers/crimeController");
 const victimcontroller = require("../controllers/victimcontroller");
 const dataController = require("../controllers/dataController");
-
+const crimefromothersource = require("../controllers/crimefromothersourcecontroller");
 //user routes
 router.post("/signup", authcontroller.signup);
 router.post("/signin", authcontroller.signin);
@@ -42,6 +42,18 @@ router.get(
   "/getcriminalupdatesubmit",
   criminalcontroller.getcriminalupdatesubmit
 );
+
+// crime from other source route
+router.post(
+  "/crimefromothersourcedata",
+  crimefromothersource.getcrimefromothesource
+);
+router.get(
+  "/getcrimefromothersourcedata",
+  crimefromothersource.getCrimeFromOtherSourcedata
+);
+router.delete("/deletecrime/:id", crimefromothersource.deleteCrimeById);
+router.get("/savedatatojson", crimefromothersource.saveDataToJson);
 
 // crime routes
 router.post("/crimedata", crimecontroller.getcrimedata);
