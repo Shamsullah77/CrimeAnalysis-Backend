@@ -16,5 +16,41 @@
     "Previous_activity": "walking",
     "Economical_situation": "low",
     "Education_level": "12 classes"
+  },
+  {
+    "id": 2,
+    "Criminal_name": "Ahmad ",
+    "Crime_type": "kill",
+    "Crime_date": "2024-07-01T00:00:00.000Z",
+    "Hour_of_day": "20:07:00",
+    "Location": "Kandahar",
+    "Victim_gender": "male",
+    "Perpetrator_gender": "male",
+    "Perpetrator_age": 1,
+    "Weapon": "knife",
+    "Injury": "none",
+    "Weather": "snow",
+    "Temperature": 45,
+    "Previous_activity": "waking",
+    "Economical_situation": "high",
+    "Education_level": "primary"
+  },
+  {
+    "id": 3,
+    "Criminal_name": "Satar",
+    "Crime_type": "theft",
+    "Crime_date": "2024-05-15T00:00:00.000Z",
+    "Hour_of_day": "20:09:00",
+    "Location": "Kandahar",
+    "Victim_gender": "female",
+    "Perpetrator_gender": "male",
+    "Perpetrator_age": 12,
+    "Weapon": "knife",
+    "Injury": "none",
+    "Weather": "shany",
+    "Temperature": 45,
+    "Previous_activity": "shoping",
+    "Economical_situation": "low",
+    "Education_level": "primary"
   }
 ]

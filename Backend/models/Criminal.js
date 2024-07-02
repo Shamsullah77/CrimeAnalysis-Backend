@@ -48,7 +48,7 @@ const Criminal = sequelize.define(
       allowNull: false,
     },
     Gender: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     Image: {

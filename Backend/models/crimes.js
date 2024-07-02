@@ -20,7 +20,6 @@ const crime = sequelize.define(
     Crimedate: {
       type: DataTypes.STRING,
       allowNull: false,
-    
     },
     Strategy: {
       type: DataTypes.STRING,
