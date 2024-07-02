@@ -64,6 +64,7 @@ router.get(
   dashcontroller.dashboard
 );
 // maps routes
+router.get("/api/location/crimes", crimecontroller.getLocationCrimes);
 module.exports = router;
 
 // Backend/routes/dataRoutes.js

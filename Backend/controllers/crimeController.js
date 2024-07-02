@@ -41,7 +41,7 @@ exports.getcrimedata = (req, res) => {
     );
 
     // Image data from multer
-    const image = req.file ? req.file.buffer : null;
+    const image = "image";
 
     try {
       // insert crime type.....
@@ -133,7 +133,6 @@ exports.getLocationCrimes = async (req, res) => {
   try {
     const crimesByLocation = await location.findAll({
       attributes: [
-        "id",
         "District",
         "Latitude",
         "Longitude",
@@ -145,11 +144,10 @@ exports.getLocationCrimes = async (req, res) => {
           attributes: [],
         },
       ],
-      group: ["Location.id"],
+      group: ["District", "Latitude", "Longitude"],
     });
 
     const result = crimesByLocation.map((location) => ({
-      locationId: location.id,
       district: location.District,
       latitude: location.Latitude,
       longitude: location.Longitude,
