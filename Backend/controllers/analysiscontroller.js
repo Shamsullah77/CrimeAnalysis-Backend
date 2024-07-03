@@ -2,21 +2,25 @@ const Crimes = require("../models/crimes");
 const { Sequelize, literal, fn, col, Op } = require("sequelize");
 const CrimeType = require("../models/crimeType");
 const Location = require("../models/location");
-Crimes.belongsTo(CrimeType, { foreignKey: "crimetypeid", as: "crimetype" });
 
-// Controller function
+// Define associations
+Crimes.belongsTo(CrimeType, { foreignKey: "crimetypeid", as: "crimetype" });
+Crimes.hasMany(Location, { foreignKey: "crimeId", as: "locations" });
+
 exports.analysiseddata = async (req, res) => {
   try {
     // Fetch monthly crime statistics
-    const monthlyStats = await Crimes.findAll({
+
+    const monthlyStatsQuery = await Crimes.findAll({
       attributes: [
-        [literal("DATE_FORMAT(crimedate, '%b')"), "month"],
-        [fn("COUNT", col("userid")), "totalCrime"],
+        "id",
+        [literal("DATE_FORMAT(Crimedate, '%Y-%m')"), "Month"],
+        [fn("COUNT", fn("DISTINCT", col("crimetype.id"))), "CrimetypesCount"],
         [
-          fn("COUNT", fn("DISTINCT", col("crimetype.crimetype"))),
-          "totalCrimeType",
+          fn("COUNT", fn("DISTINCT", col("Crime.criminalId"))),
+          "CriminalsCount",
         ],
-        [fn("COUNT", col("Strategy")), "totalCrimestrategies"],
+        [fn("COUNT", fn("DISTINCT", col("Crime.id"))), "CrimesCount"],
       ],
       include: [
         {
@@ -24,8 +28,15 @@ exports.analysiseddata = async (req, res) => {
           as: "crimetype",
           attributes: [],
         },
+        {
+          model: Location,
+          as: "locations",
+          attributes: [],
+          required: false, // To simulate LEFT OUTER JOIN
+        },
       ],
-      group: [literal("DATE_FORMAT(crimedate, '%b')")],
+
+      group: [literal("DATE_FORMAT(Crimedate, '%Y-%m')")],
     });
 
     // Fetch unique crime types
@@ -39,31 +50,36 @@ exports.analysiseddata = async (req, res) => {
       crime.getDataValue("crimetype")
     );
 
-    console.log(monthlyStats);
+    console.log(monthlyStatsQuery);
     console.log(crimeTypes);
 
     // Send the response
-    res.json({ Status: "Success", monthlyStats, crimeTypes });
+    res.json({
+      Status: "Success",
+      monthlyStats: monthlyStatsQuery,
+      crimeTypes,
+    });
   } catch (error) {
     console.error("Error fetching crime data:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
-Crimes.hasMany(Location, { foreignKey: "crimeId", as: "locations" });
+
 exports.analysisformdata = async (req, res, next) => {
   try {
     const { crimeType, crimeTime, crimeLocation } = req.body;
     console.log(crimeTime, crimeType, crimeLocation);
-    // Fetch monthly crime statistics with where condition
-    const monthlyStatsQuery = Crimes.findAll({
+
+    const monthlyStatsQuery = await Crimes.findAll({
       attributes: [
-        [literal("DATE_FORMAT(crimedate, '%b')"), "month"],
-        [fn("COUNT", col("userid")), "totalCrime"],
+        "id",
+        [literal("DATE_FORMAT(Crimedate, '%Y-%m')"), "Month"],
+        [fn("COUNT", fn("DISTINCT", col("crimetype.id"))), "CrimetypesCount"],
         [
-          fn("COUNT", fn("DISTINCT", col("crimetype.crimetype"))),
-          "totalCrimeType",
+          fn("COUNT", fn("DISTINCT", col("Crime.criminalId"))),
+          "CriminalsCount",
         ],
-        [fn("COUNT", col("Strategy")), "totalCrimestrategies"],
+        [fn("COUNT", fn("DISTINCT", col("Crime.id"))), "CrimesCount"],
       ],
       include: [
         {
@@ -73,22 +89,26 @@ exports.analysisformdata = async (req, res, next) => {
         },
         {
           model: Location,
-          as: "locations", // Use the alias defined in the association
+          as: "locations",
           attributes: [],
-          where: {
-            [Op.or]: [{ Village: crimeLocation }, { District: crimeLocation }],
-          },
+          required: false, // To simulate LEFT OUTER JOIN
         },
       ],
       where: {
-        crimedate: crimeTime,
+        [Op.or]: [
+          { "$crimetype.Crimetype$": crimeType },
+          { "$locations.District$": crimeLocation },
+          Sequelize.where(
+            fn("YEAR", col("Crimedate")),
+            fn("YEAR", literal(crimeTime))
+          ),
+        ],
       },
-      group: [literal("DATE_FORMAT(crimedate, '%b')")],
+      group: [literal("DATE_FORMAT(Crimedate, '%Y-%m')")],
     });
 
-    const seacrheddata = await monthlyStatsQuery;
-    console.log(seacrheddata);
-    res.json({ Status: "Success", seacrheddata });
+    console.log(monthlyStatsQuery);
+    res.json({ Status: "Success", seacrheddata: monthlyStatsQuery });
   } catch (error) {
     console.error("Error fetching analysis data:", error);
     res.status(500).json({ error: "Internal server error" });
