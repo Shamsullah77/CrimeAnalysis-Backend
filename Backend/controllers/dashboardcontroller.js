@@ -1,8 +1,9 @@
 const Crimes = require("../models/crimes");
-const { literal, fn, col } = require("sequelize");
+const { literal, fn, col, Sequelize } = require("sequelize");
 const CrimeType = require("../models/crimeType");
 const Location = require("../models/location");
 const Criminals = require("../models/Criminal");
+const Victim = require("../models/victim");
 Crimes.belongsTo(CrimeType, { foreignKey: "crimetypeid", as: "crimetypes" });
 exports.dashboard = async (req, res) => {
   try {
@@ -61,6 +62,51 @@ exports.dashboard = async (req, res) => {
     });
   } catch (error) {
     console.error("Error fetching crime data:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+exports.reportresult = async (req, res) => {
+  try {
+    const reportData = await Crimes.findAll({
+      include: [
+        {
+          model: Criminals,
+          attributes: [],
+          include: [
+            {
+              model: Victim,
+              attributes: [],
+            },
+          ],
+        },
+        {
+          model: Location,
+          attributes: ["District"], // Include the District from Location table
+        },
+      ],
+      attributes: [
+        [Sequelize.literal("YEAR(Crimedate)"), "year"], // Using sequelize.literal to get the YEAR from Crimedate
+        [Sequelize.fn("COUNT", Sequelize.col("Crime.id")), "crime_count"],
+        [Sequelize.fn("COUNT", Sequelize.col("criminal.id")), "criminal_count"],
+        [
+          Sequelize.fn("COUNT", Sequelize.col("criminal.Victims.id")),
+          "victim_count",
+        ],
+        [Sequelize.literal("Locations.District"), "district"], // Correct case for Location.District
+      ],
+      where: Sequelize.literal("YEAR(Crimedate) IS NOT NULL"), // Filter out null values for YEAR(Crimedate)
+      group: [
+        Sequelize.literal("YEAR(Crimedate)"),
+        Sequelize.literal("Locations.District"), // Correct case for Location.District
+      ],
+      raw: true,
+    });
+
+    console.log(reportData);
+    res.json({ Status: "Success", results: reportData });
+  } catch (error) {
+    console.error("Error fetching report data:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };

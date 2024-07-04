@@ -77,6 +77,7 @@ router.get(
   is_auth.AuthRole("admin"),
   dashcontroller.dashboard
 );
+router.get("/getreportdata", dashcontroller.reportresult);
 // maps routes
 router.get("/api/location/crimes", crimecontroller.getLocationCrimes);
 module.exports = router;
