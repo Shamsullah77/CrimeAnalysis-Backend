@@ -268,7 +268,7 @@ exports.getuserupdate = async (req, res) => {
   try {
     const user = await User.findOne({
       where: { id: Id },
-      attributes: ["Name", "Email", "role", "image"],
+      attributes: ["id", "Name", "Email", "role", "image"],
     });
 
     if (!user) {
@@ -293,7 +293,7 @@ exports.getuserupdate = async (req, res) => {
   }
 };
 
-//getvictimupdatesubmit
+//getuserupdatesubmit
 exports.getuserupdatesubmit = async (req, res) => {
   console.log("i am here");
   const { Name, Image, Email, Role } = req.body;
@@ -306,7 +306,7 @@ exports.getuserupdatesubmit = async (req, res) => {
     }
 
     await User.update(
-      { Name, Image, Role, Email },
+      { Name, image: Image, role: Role, Email },
       { where: { Email: Email } }
     );
 
@@ -316,6 +316,3 @@ exports.getuserupdatesubmit = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
-
-
-
