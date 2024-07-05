@@ -24,6 +24,7 @@ router.get("/getuserupdate", authcontroller.getuserupdate);
 router.post("/getuserupdatesubmit", authcontroller.getuserupdatesubmit);
 router.get("/", authcontroller.home);
 router.get("/About", authcontroller.about);
+//crime analysis routes
 router.get(
   "/crimeanalysis",
   is_auth.AuthUser,
