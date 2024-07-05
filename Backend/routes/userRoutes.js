@@ -10,6 +10,7 @@ const crimecontroller = require("../controllers/crimeController");
 const victimcontroller = require("../controllers/victimcontroller");
 const dataController = require("../controllers/dataController");
 const crimefromothersource = require("../controllers/crimefromothersourcecontroller");
+const crime = require("../models/crimes");
 //user routes
 router.post("/signup", authcontroller.signup);
 router.post("/signin", authcontroller.signin);
@@ -23,6 +24,7 @@ router.get("/getuserupdate", authcontroller.getuserupdate);
 router.post("/getuserupdatesubmit", authcontroller.getuserupdatesubmit);
 router.get("/", authcontroller.home);
 router.get("/About", authcontroller.about);
+//crime analysis routes
 router.get(
   "/crimeanalysis",
   is_auth.AuthUser,
@@ -38,11 +40,10 @@ router.get("/getcriminaldashboard", criminalcontroller.getcriminaldashboard);
 router.post("/deletecriminal", criminalcontroller.deletecriminal);
 router.get("/getcriminalseemore", criminalcontroller.getcriminalseemore);
 router.get("/getcriminalupdate", criminalcontroller.getcriminalupdate);
-router.get(
+router.post(
   "/getcriminalupdatesubmit",
   criminalcontroller.getcriminalupdatesubmit
 );
-
 // crime from other source route
 router.post(
   "/crimefromothersourcedata",
@@ -59,6 +60,8 @@ router.get("/savedatatojson", crimefromothersource.saveDataToJson);
 router.post("/crimedata", crimecontroller.getcrimedata);
 router.get("/getcrimedashboard", crimecontroller.getcrimedashboard);
 router.get("/getcrimeseemore", crimecontroller.getcrimeseemore);
+router.get("/getcrimeupdate", crimecontroller.getcrimeupdate);
+router.post("/getcrimeupdatesubmit", crimecontroller.getcrimeupdatesubmit);
 // victim routes
 router.get("/getvictim", victimcontroller.getvictim);
 router.post("/victimdata", victimcontroller.getvictimdata);
@@ -75,6 +78,7 @@ router.get(
   is_auth.AuthRole("admin"),
   dashcontroller.dashboard
 );
+router.get("/getreportdata", dashcontroller.reportresult);
 // maps routes
 router.get("/api/location/crimes", crimecontroller.getLocationCrimes);
 module.exports = router;

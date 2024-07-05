@@ -49,15 +49,40 @@ exports.analysiseddata = async (req, res) => {
     const crimeTypes = uniqueCrimeTypes.map((crime) =>
       crime.getDataValue("crimetype")
     );
+    // analysis according to days
 
-    console.log(monthlyStatsQuery);
-    console.log(crimeTypes);
+    const results = await Crimes.findAll({
+      attributes: [
+        [fn("DAYNAME", col("Crimedate")), "day"],
+        [fn("COUNT", col("id")), "count"],
+      ],
+      group: [literal("day")],
+    });
+
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const formattedResults = daysOfWeek.map((day) => {
+      const found = results.find((result) => result.dataValues.day === day);
+      return { day, count: found ? found.dataValues.count : 0 };
+    });
+
+    console.log(formattedResults);
+    // console.log(monthlyStatsQuery);
+    // console.log(crimeTypes);
 
     // Send the response
     res.json({
       Status: "Success",
       monthlyStats: monthlyStatsQuery,
       crimeTypes,
+      daysdata: formattedResults,
     });
   } catch (error) {
     console.error("Error fetching crime data:", error);
@@ -114,3 +139,5 @@ exports.analysisformdata = async (req, res, next) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+//data for graphs for each daya sunday........
