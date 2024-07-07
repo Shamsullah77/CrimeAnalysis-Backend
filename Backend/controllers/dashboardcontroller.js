@@ -18,11 +18,7 @@ exports.dashboard = async (req, res) => {
         [fn("COUNT", fn("DISTINCT", col("crimetype"))), "totalcrimetypes"],
       ],
     });
-    const totalcriminals = await Criminals.findAll({
-      attributes: [
-        [fn("COUNT", fn("DISTINCT", col("name"))), "totalcriminals"],
-      ],
-    });
+    const tcriminals = await Criminals.count();
     // Fetch total count of all crimes
     const totalCrime = await Crimes.count();
 
@@ -48,7 +44,7 @@ exports.dashboard = async (req, res) => {
     });
 
     const tlocation = totallocations[0].get("totallocations");
-    const tcriminals = totalcriminals[0].get("totalcriminals");
+    // const tcriminals = totalcriminals[0].get("totalcriminals");
     const tcrimetypes = totalcrimetypes[0].get("totalcrimetypes");
     console.log(tlocation, tcrimetypes, tcriminals);
     // Send the response with all counts
