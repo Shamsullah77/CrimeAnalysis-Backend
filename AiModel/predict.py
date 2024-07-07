@@ -1,8 +1,8 @@
 import joblib
 import pandas as pd
-from sklearn.compose import ColumnTransformer
-import os
 import json
+import os
+from data_preprocessor import DataPreprocessor  # Import the class
 
 # Define the base path
 base_path = os.path.dirname(os.path.abspath(__file__))
@@ -41,23 +41,23 @@ def predict_crime_and_location(data):
 if __name__ == "__main__":
     # Example input data
     input_data = {
-        'hour_of_day': [24],
-        'victim_age': [81],
-        'perpetrator_age': [15],
-        'economic_index': [0.8],
-        'education_index': [0.7],
-        'date': ['2021-07-06'],
+        'hour_of_day': [20],
+        'victim_age': [18],
+        'perpetrator_age': [41],
+        'economic_index': [88.1],
+        'education_index': [38.7],
+        'date': ['2020-09-12'],
         'location': ['center'],
-        'victim_gender': ['Female'],
-        'perpetrator_gender': ['Female'],
-        'weapon': ['None'],
-        'time_of_day': ['Day'],
-        'day_of_week': ['Monday'],
-        'month': ['June'],
-        'season': ['Summer'],
-        'victim_age_group': ['Adult'],
+        'victim_gender': ['Male'],
+        'perpetrator_gender': ['Male'],
+        'weapon': ['Other'],
+        'time_of_day': ['Night'],
+        'day_of_week': ['Saturday'],
+        'month': ['September'],
+        'season': ['Winter'],
+        'victim_age_group': ['Child'],
         'perpetrator_age_group': ['Adult'],
-        'weather_condition': ['Normal'],
+        'weather_condition': ['Wet'],
     }
 
     input_data = pd.DataFrame(input_data)
