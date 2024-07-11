@@ -93,7 +93,7 @@ exports.getcrimedashboard = async (req, res) => {
       Id: crime.id,
       cases: crime.Casees,
       crimedate: crime.Crimedate,
-      startegy: crime.Strategy,
+      strategy: crime.Strategy,
     }));
 
     // console.log(usersWithBase64);

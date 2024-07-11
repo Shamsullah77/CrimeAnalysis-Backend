@@ -35,6 +35,7 @@ router.get("/contactus", contactcontroller.getcontact);
 router.post("/formdata", analysiscontroller.analysisformdata);
 // criminals routes
 router.post("/criminaldata", criminalcontroller.getcriminaldata);
+router.get("/getcriminals",criminalcontroller.getCriminals);
 router.get("/getcriminalinfo", criminalcontroller.getcriminalinfo);
 router.get("/getcriminaldashboard", criminalcontroller.getcriminaldashboard);
 router.post("/deletecriminal", criminalcontroller.deletecriminal);

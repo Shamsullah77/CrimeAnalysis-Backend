@@ -46,6 +46,21 @@ exports.getcriminaldata = (req, res) => {
   });
 };
 
+// new route for criminlas to find one 
+
+exports.getCriminals = async (req, res) => {
+  try {
+    const criminals = await Criminal.findAll({
+      attributes: ['id', 'name'], // Assuming you have 'id' and 'name' fields in your Criminal model
+    });
+    res.json({ Status: 'Success', criminals });
+  } catch (error) {
+    console.error('Error fetching criminals:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+
 // Controller to handle getting criminal info
 exports.getcriminalinfo = async (req, res) => {
   const { name } = req.query; // Get the name from the query parameters
