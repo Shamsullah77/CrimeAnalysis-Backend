@@ -87,22 +87,29 @@ exports.getcrimedashboard = async (req, res) => {
   try {
     const crimes = await Crime.findAll({
       attributes: ["id", "Casees", "Crimedate", "Strategy"], // Limit the number of results to 3
+      include: [{
+        model: CrimeType,
+        attributes: ["Crimetype"], // Adjust according to the actual attribute name in the CrimeType table
+      }]
     });
-    // Map over criminals to convert image buffer to base64
+
+    // Map over crimes to include the crime type
     const crimesWithBase64 = crimes.map((crime) => ({
       Id: crime.id,
       cases: crime.Casees,
       crimedate: crime.Crimedate,
       strategy: crime.Strategy,
+      crimeType: crime.crimeType ? crime.crimeType.Crimetype : null, // Include the crime type
     }));
 
-    // console.log(usersWithBase64);
+    // console.log(crimesWithBase64);
     res.json({ Status: "Success", crimes: crimesWithBase64 });
   } catch (error) {
     console.error("Error fetching crime:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 //getcrimeseemore
 exports.getcrimeseemore = async (req, res) => {
   const { id } = req.query;

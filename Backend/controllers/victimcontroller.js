@@ -50,10 +50,14 @@ exports.getvictimdashboard = async (req, res) => {
         "Province",
         "Age",
         "Gender",
-        "criminal",
-      ], // Limit the number of results to 3
+      ],
+      include: [{
+        model: Criminal,
+        attributes: ["Name"],
+      }]
     });
-    // Map over criminals to convert image buffer to base64
+
+    // Map over victims to include the criminal name
     const usersWithBase64 = victims.map((victim) => ({
       id: victim.id,
       name: victim.Name,
@@ -61,7 +65,7 @@ exports.getvictimdashboard = async (req, res) => {
       province: victim.Province,
       age: victim.Age,
       gender: victim.Gender,
-      Criminal: victim.criminal,
+      Criminal: victim.Criminal ? victim.Criminal.Name : null, // Include the criminal's name
     }));
 
     // console.log(usersWithBase64);
@@ -71,6 +75,7 @@ exports.getvictimdashboard = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 //deletevictim
 exports.deletevictim = async (req, res) => {
   const { victimid } = req.body;
