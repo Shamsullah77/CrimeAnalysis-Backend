@@ -1,5 +1,6 @@
 import joblib
 import pandas as pd
+import numpy as np
 import json
 import os
 from data_preprocessor import DataPreprocessor  # Import the class
@@ -12,31 +13,36 @@ col_tsf = joblib.load(os.path.join(base_path, 'column_transformer.pkl'))
 model_crime_type = joblib.load(os.path.join(base_path, 'final_random_forest_model_for_crime_type.pkl'))
 model_location = joblib.load(os.path.join(base_path, 'final_random_forest_model_for_location.pkl'))
 
-def predict_crime_and_location(data):
+def predict_top_5_crime_and_location(data):
     # Preprocess the input data
     data_preprocessed = col_tsf.transform(data)
 
-    # Predict crime type
-    crime_type_pred = model_crime_type.predict(data_preprocessed)
+    # Predict crime type probabilities
     crime_type_prob = model_crime_type.predict_proba(data_preprocessed)
-
-    # Predict location
-    location_pred = model_location.predict(data_preprocessed)
+    # Predict location probabilities
     location_prob = model_location.predict_proba(data_preprocessed)
 
-    # Get the prediction with the highest probability for crime type and location
-    crime_type_max_prob_idx = crime_type_prob.argmax(axis=1)
-    location_max_prob_idx = location_prob.argmax(axis=1)
+    # Get the top 5 predictions for crime type and location with probabilities
+    top_crime_indices = crime_type_prob.argsort(axis=1)[:, -5:][:, ::-1]
+    top_crime_probs = np.sort(crime_type_prob, axis=1)[:, -5:][:, ::-1]
+    
+    top_5_location_indices = location_prob.argsort(axis=1)[:, -5:][:, ::-1]
+    top_5_location_probs = np.sort(location_prob, axis=1)[:, -5:][:, ::-1]
 
-    # Create a response with predictions and their respective highest probabilities
-    result = {
-        'crime_type_prediction': crime_type_pred[0],
-        'crime_type_probability': round(crime_type_prob[0][crime_type_max_prob_idx[0]], 4),
-        'location_prediction': location_pred[0],
-        'location_probability': round(location_prob[0][location_max_prob_idx[0]], 4)
-    }
+    results = []
+    num_crime_classes = top_crime_indices.shape[1]
+    num_location_classes = top_5_location_indices.shape[1]
+    
+    for i in range(num_location_classes):
+        result = {
+            'crime_type_prediction': model_crime_type.classes_[top_crime_indices[0, i % num_crime_classes]],
+            'crime_type_probability': round(top_crime_probs[0, i % num_crime_classes], 4),
+            'location_prediction': model_location.classes_[top_5_location_indices[0, i]],
+            'location_probability': round(top_5_location_probs[0, i], 4)
+        }
+        results.append(result)
 
-    return result
+    return results
 
 if __name__ == "__main__":
     # Example input data
@@ -61,5 +67,8 @@ if __name__ == "__main__":
     }
 
     input_data = pd.DataFrame(input_data)
-    predictions = predict_crime_and_location(input_data)
-    print(json.dumps(predictions))
+    predictions = predict_top_5_crime_and_location(input_data)
+    
+    # Print each of the top 5 predictions as separate JSON objects
+    for prediction in predictions:
+        print(json.dumps(prediction))
